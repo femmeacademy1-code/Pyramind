@@ -1,4 +1,5 @@
 name: Deploy landing page to GitHub Pages
+# Publishes the site/ folder. Pages source: Settings → Pages → GitHub Actions.
 
 on:
   push:
