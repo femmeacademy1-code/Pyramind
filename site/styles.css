@@ -141,7 +141,16 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
   display: flex; flex-direction: column; gap: 14px; padding: 16px;
   border: 1px solid var(--color-divider); border-radius: var(--radius-md);
 }
-.model .plate img { aspect-ratio: 4 / 5; }
+.model .plate img { aspect-ratio: 16 / 10; }
+.model-diagram { margin: 4px 0 0; text-align: center; color: var(--gold); }
+.model-diagram svg { display: block; width: 100%; max-width: 220px; height: auto; margin: 0 auto; overflow: visible; }
+.model-diagram .front { stroke-width: 2.2; }
+.model-diagram .back { stroke-width: 1.2; opacity: 0.55; }
+.model-diagram .ground { stroke-width: 1.2; opacity: 0.4; }
+.model-diagram .string { stroke-width: 0.8; opacity: 0.7; }
+.model-diagram .crystal { stroke-width: 1; fill: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+.model-diagram text { fill: var(--copper); stroke: none; font: 500 11px var(--font-body); }
+.model-diagram figcaption { margin-top: 4px; font-size: 13px; letter-spacing: 0.04em; color: var(--color-accent-700); }
 .model-head { padding: 0 4px; }
 .models { max-width: 900px; margin: 0 auto; }
 .model h3 {
