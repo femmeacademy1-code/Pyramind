@@ -1,0 +1,183 @@
+/* Mystic Pyramid — landing page styles.
+   Tokens come from the Classical design system (project/_ds/classical-…/styles.css),
+   with the page's own cream / gold / copper palette layered on top. */
+
+:root {
+  --color-bg: #f6eedf;
+  --color-surface: #eae9e9;
+  --color-text: #6b3d22;
+  --color-divider: rgba(160, 98, 58, 0.28);
+
+  --color-accent: #b68235;
+  --color-accent-700: #7d5411;
+  --color-accent-900: #3a270d;
+
+  --gold: #a8732a;
+  --gold-deep: #8f5f22;
+  --copper: #9a5a33;
+
+  --font-display: "Bellefair", "Cormorant Garamond", serif;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Assistant", system-ui, sans-serif;
+
+  --radius-md: 4px;
+  --edge: clamp(20px, 5vw, 56px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  text-wrap: pretty;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--color-accent-700); text-decoration-color: var(--color-accent); text-underline-offset: 3px; }
+a:hover { color: var(--color-accent-900); }
+a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+.page { max-width: 1100px; margin: 0 auto; }
+
+/* — shared pieces — */
+.rule { height: 1px; border: 0; margin: 0 var(--edge); background: var(--color-divider); }
+.section { padding: 64px var(--edge); }
+.prose { max-width: 640px; margin: 0 auto; }
+.prose p { margin: 14px 0 0; text-align: justify; }
+.prose .lead { margin-top: 18px; }
+.kicker { display: block; font-size: 13px; letter-spacing: 0.08em; color: var(--color-accent-700); margin-bottom: 10px; }
+.h2 {
+  font-family: var(--font-display); font-weight: 400; color: var(--gold);
+  font-size: clamp(28px, 6vw, 40px); line-height: 1.2; margin: 0;
+}
+.muted { color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+
+.plate {
+  margin: 0;
+  filter: sepia(0.22) saturate(0.82) contrast(1.05);
+  border: 6px solid var(--color-surface);
+  outline: 1px solid var(--color-divider);
+}
+.plate img, .plate video { display: block; width: 100%; object-fit: cover; }
+
+/* — buttons (Classical .btn, set in Assistant) — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 44px; padding: 9.2px 16.56px;
+  font-family: var(--font-body); font-weight: 500; font-size: 14px; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  background: transparent; border: 1px solid transparent; border-radius: var(--radius-md);
+}
+.btn-primary { color: var(--color-accent); border-color: var(--color-accent); }
+.btn-primary:hover { color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: 4.6px; }
+.btn-ghost:hover { color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-soft { background: rgba(246, 238, 223, 0.6); }
+
+/* — hero — */
+.hero {
+  position: relative; min-height: 92vh; min-height: 92svh;
+  display: flex; flex-direction: column;
+  background-image:
+    linear-gradient(to bottom, rgba(246, 238, 223, 0.55) 0%, rgba(246, 238, 223, 0.78) 45%, rgba(246, 238, 223, 0.96) 100%),
+    url("assets/grove.jpg");
+  background-size: cover; background-position: 50% 40%;
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 12px var(--edge);
+  border-bottom: 1px solid var(--color-divider);
+  background: rgba(246, 238, 223, 0.85);
+}
+.brand {
+  font-family: var(--font-display); font-size: 17px; letter-spacing: 0.14em;
+  text-transform: uppercase; direction: ltr; color: var(--gold-deep);
+}
+.hero-body {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px var(--edge) 64px;
+}
+.hero-logo {
+  display: block; width: min(280px, 70vw); height: auto; aspect-ratio: 1; object-fit: cover;
+  mix-blend-mode: multiply; margin: -30px auto -50px;
+}
+.hero h1 {
+  font-family: var(--font-display); font-weight: 400; color: var(--gold-deep);
+  font-size: clamp(32px, 8vw, 50px); line-height: 1.2; letter-spacing: -0.01em;
+  margin: 0; max-width: 16ch;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+
+/* — copper benefits — */
+.benefits {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 0 20px; max-width: 900px; margin: 40px auto 0;
+  border-top: 1px solid var(--color-divider);
+}
+.benefit {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;
+  padding: 28px 12px; border-bottom: 1px solid var(--color-divider);
+}
+.benefit-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px; border: 1px solid var(--color-accent); border-radius: 50%; color: var(--gold);
+}
+.benefit h3 { font-family: var(--font-display); font-weight: 400; font-size: 23px; line-height: 1.2; color: var(--copper); margin: 0; }
+.benefit p { margin: 0; font-size: 15.5px; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+
+/* — models — */
+.models-intro { max-width: 640px; margin: 0 auto 36px; }
+.models-intro p { margin: 14px 0 0; }
+.models { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 28px; }
+.model {
+  display: flex; flex-direction: column; gap: 14px; padding: 16px;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.model .plate img { aspect-ratio: 4 / 5; }
+.model-head { padding: 0 4px; }
+.model h3 {
+  font-family: var(--font-heading); font-weight: 500; font-size: 26px; line-height: 1.1;
+  margin: 0; direction: ltr; text-align: right; color: var(--gold);
+}
+.model-sub, .model-spec { font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.model p { margin: 0; padding: 0 4px; font-size: 15.5px; color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.model-spec { padding: 10px 4px 0; border-top: 1px solid var(--color-divider); }
+.model .btn { display: flex; min-height: 48px; margin-top: auto; }
+
+/* — how to use — */
+.usage {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 40px; align-items: center; max-width: 900px; margin: 0 auto;
+}
+.steps { list-style: none; padding: 0; margin: 24px 0 0; border-top: 1px solid var(--color-divider); }
+.steps li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--color-divider); font-size: 15.5px; }
+.steps .num {
+  font-family: var(--font-heading); font-size: 20px; line-height: 1.4; color: var(--color-accent);
+  font-feature-settings: "tnum" 1; min-width: 18px;
+}
+.usage .plate { max-width: 380px; width: 100%; justify-self: center; }
+.usage video { aspect-ratio: 9 / 16; }
+
+/* — order — */
+.order {
+  margin: 0 var(--edge) 48px; padding: 56px clamp(20px, 5vw, 48px);
+  border: 1px solid var(--color-accent); border-radius: var(--radius-md); text-align: center;
+}
+.order p { max-width: 40ch; margin: 14px auto 0; }
+.order .btn { min-height: 52px; padding: 0 28px; margin-top: 28px; font-size: 17px; }
+
+/* — footer — */
+.footer {
+  padding: 24px var(--edge) 40px; border-top: 1px solid var(--color-divider);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  font-size: 13px; color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.footer a { color: inherit; }
