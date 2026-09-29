@@ -133,6 +133,11 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .benefit h3 { font-family: var(--font-display); font-weight: 400; font-size: 23px; line-height: 1.2; color: var(--copper); margin: 0; }
 .benefit p { margin: 0; font-size: 15.5px; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
 
+.egypt-photo { margin: 28px 0 0; }
+.egypt-photo img { aspect-ratio: 16 / 9; }
+.egypt-photo figcaption { margin-top: 8px; font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 82%, transparent); }
+.egypt-photo figcaption a { color: inherit; }
+
 /* — models — */
 .models-intro { max-width: 640px; margin: 0 auto 36px; }
 .models-intro p { margin: 14px 0 0; }
@@ -147,8 +152,6 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .model-diagram .front { stroke-width: 2.2; }
 .model-diagram .back { stroke-width: 1.2; opacity: 0.55; }
 .model-diagram .ground { stroke-width: 1.2; opacity: 0.4; }
-.model-diagram .string { stroke-width: 0.8; opacity: 0.7; }
-.model-diagram .crystal { stroke-width: 1; fill: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 .model-diagram text { fill: var(--copper); stroke: none; font: 500 11px var(--font-body); }
 .model-diagram figcaption { margin-top: 4px; font-size: 13px; letter-spacing: 0.04em; color: var(--color-accent-700); }
 .model-head { padding: 0 4px; }
@@ -249,7 +252,6 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .model:hover .plate img { transform: scale(1.04); }
 .hero-logo { animation: float 7s ease-in-out 1.4s infinite; }
 @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
-.model-diagram .crystal { transform-box: fill-box; transform-origin: 50% 0; animation: sway 4s ease-in-out infinite; }
 @keyframes sway { 0%, 100% { rotate: -6deg; } 50% { rotate: 6deg; } }
 .model-diagram .front, .model-diagram .back, .model-diagram .ground { stroke-dasharray: 400; stroke-dashoffset: 0; }
 .js .model.reveal .model-diagram .front,
@@ -258,8 +260,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .js .model.reveal.is-visible .model-diagram path { stroke-dashoffset: 0; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal, .js .reveal-zoom { opacity: 1; transform: none; transition: none; }
-  .hero-logo, .model-diagram .crystal { animation: none; }
-  .js .model.reveal .model-diagram path { stroke-dashoffset: 0; transition: none; }
+  .hero-logo,   .js .model.reveal .model-diagram path { stroke-dashoffset: 0; transition: none; }
   .model, .model .plate img, .benefit-icon { transition: none; }
 }
 

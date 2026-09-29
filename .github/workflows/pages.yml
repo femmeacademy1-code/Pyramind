@@ -24,6 +24,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch Giza photo from Wikimedia Commons (CC BY-SA 2.0, credited on the page)
+        if: ${{ hashFiles('site/assets/egypt.jpg') == '' }}
+        continue-on-error: true
+        run: |
+          curl -fsSL -A "MysticPyramidSite/1.0 (GitHub Pages build)" \
+            -o site/assets/egypt.jpg \
+            "https://commons.wikimedia.org/wiki/Special:FilePath/All_Gizah_Pyramids.jpg?width=1600"
+          file site/assets/egypt.jpg | grep -qi jpeg || { rm -f site/assets/egypt.jpg; exit 1; }
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
