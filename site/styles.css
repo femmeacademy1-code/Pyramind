@@ -163,6 +163,9 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
   font-family: var(--font-heading); font-size: 20px; line-height: 1.4; color: var(--color-accent);
   font-feature-settings: "tnum" 1; min-width: 18px;
 }
+.steps strong { font-weight: 600; color: var(--copper); }
+.steps .num { display: flex; align-items: center; height: 1.75em; min-width: 14px; }
+.virtues-intro { margin: 14px 0 0; text-align: justify; }
 .usage .plate { max-width: 380px; width: 100%; justify-self: center; }
 .usage video { aspect-ratio: 9 / 16; }
 .video { position: relative; }
