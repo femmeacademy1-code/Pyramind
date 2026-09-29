@@ -64,7 +64,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
   border: 6px solid var(--color-surface);
   outline: 1px solid var(--color-divider);
 }
-.plate img, .plate video { display: block; width: 100%; object-fit: cover; }
+.plate img, .plate video { display: block; width: 100%; height: auto; object-fit: cover; }
 
 /* — buttons (Classical .btn, set in Assistant) — */
 .btn {
@@ -143,12 +143,17 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 }
 .model .plate img { aspect-ratio: 4 / 5; }
 .model-head { padding: 0 4px; }
+.models { max-width: 900px; margin: 0 auto; }
 .model h3 {
-  font-family: var(--font-heading); font-weight: 500; font-size: 26px; line-height: 1.1;
-  margin: 0; direction: ltr; text-align: right; color: var(--gold);
+  font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.15;
+  margin: 0; color: var(--gold);
 }
 .model-sub, .model-spec { font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
 .model p { margin: 0; padding: 0 4px; font-size: 15.5px; color: color-mix(in srgb, var(--color-text) 78%, transparent); }
+.model-facts { margin: 0; padding: 0 4px; display: flex; flex-direction: column; gap: 10px; }
+.model-facts dt { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--copper); }
+.model-facts dt svg { color: var(--gold); flex: none; }
+.model-facts dd { margin: 2px 0 0; font-size: 15px; color: color-mix(in srgb, var(--color-text) 78%, transparent); }
 .model-spec { padding: 10px 4px 0; border-top: 1px solid var(--color-divider); }
 .model .btn { display: flex; min-height: 48px; margin-top: auto; }
 
