@@ -81,6 +81,7 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .btn-ghost:hover { color: var(--gold-deep); background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
 .btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
 .btn-soft { background: rgba(246, 238, 223, 0.6); }
+.btn-lg { min-height: 50px; padding-inline: 28px; font-size: 16px; }
 
 /* — hero — */
 .hero {
