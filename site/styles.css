@@ -165,6 +165,21 @@ a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 }
 .usage .plate { max-width: 380px; width: 100%; justify-self: center; }
 .usage video { aspect-ratio: 9 / 16; }
+.video { position: relative; }
+.sound-toggle {
+  position: absolute; bottom: 14px; inset-inline-start: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 0 14px;
+  font: 500 14px/1 var(--font-body); color: var(--gold-deep);
+  background: rgba(246, 238, 223, 0.88); border: 1px solid var(--color-accent); border-radius: 999px;
+  cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+.sound-toggle:hover { background: rgba(246, 238, 223, 1); }
+.sound-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.sound-toggle[hidden] { display: none; }
+.sound-toggle .wave { display: none; }
+.sound-toggle[aria-pressed="true"] .wave { display: inline; }
+.sound-toggle[aria-pressed="true"] .mute { display: none; }
 
 /* — order — */
 .order {
